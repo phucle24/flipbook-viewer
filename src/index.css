@@ -1,0 +1,644 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --radius: 0.5rem;
+
+    --color-navy: #152a3a;
+    --color-navy-light: #1e3a4f;
+    --color-navy-dark: #0d1b25;
+    --color-blue-accent: #3b82f6;
+    --color-blue-accent-light: #60a5fa;
+
+    /* Storyland themed palette */
+    --storyland-baby-blue: #A2D5F2;
+    --storyland-cotton-candy: #FFB3C1;
+    --storyland-sunshine-yellow: #FFE066;
+    --storyland-mint-green: #B2F7EF;
+    --storyland-lilac-purple: #C39BD3;
+
+    /* Storyland font families */
+    --font-fredoka: 'Fredoka One', cursive;
+    --font-baloo: 'Baloo 2', cursive;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-quicksand: 'Quicksand', sans-serif;
+
+    /* New color palette for reading UI */
+    --creamy-white: #FFF8E7;
+    --sky-blue: #CDEDF6;
+    --pastel-peach: #FFD1BA;
+    --mint-green: #D7F1E9;
+    --sunshine-yellow: #FFF5B7;
+
+    /* New font stacks for reading UI */
+    --font-cubano: 'Cubano', 'Fredoka One', sans-serif;
+    --font-mplus: 'M PLUS Rounded 1c', 'Nunito', sans-serif;
+    --font-quicksand: 'Quicksand', sans-serif;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
+}
+
+.font-fredoka {
+  font-family: var(--font-fredoka);
+}
+.font-baloo {
+  font-family: var(--font-baloo);
+}
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+.font-quicksand {
+  font-family: var(--font-quicksand);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 8px rgba(255,224,102,0.6);
+}
+.text-title-shadow {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.bg-gradient-purple-cotton {
+  background: linear-gradient(90deg, var(--storyland-lilac-purple), var(--storyland-cotton-candy));
+}
+.bg-gradient-babyblue-mint {
+  background: linear-gradient(90deg, var(--storyland-baby-blue), var(--storyland-mint-green));
+}
+.bg-mint-green {
+  background-color: var(--storyland-mint-green);
+}
+.bg-baby-blue {
+  background-color: var(--storyland-baby-blue);
+}
+.bg-cotton-candy {
+  background-color: var(--storyland-cotton-candy);
+}
+.bg-lilac-purple {
+  background-color: var(--storyland-lilac-purple);
+}
+.text-baby-blue {
+  color: var(--storyland-baby-blue);
+}
+.text-lilac-purple {
+  color: var(--storyland-lilac-purple);
+}
+.text-sunshine-yellow {
+  color: var(--storyland-sunshine-yellow);
+}
+
+.border-lilac-purple {
+  border-color: var(--storyland-lilac-purple);
+}
+.border-baby-blue {
+  border-color: var(--storyland-baby-blue);
+}
+
+.hover-bounce {
+  transition: transform 0.2s ease-in-out;
+}
+.hover-bounce:hover {
+  transform: scale(1.05);
+}
+
+/* Pastel color utility classes for card details */
+.bg-pastel-pink { background: #ffb3c1; }
+.bg-pastel-yellow { background: #ffe066; }
+.text-pastel-purple { color: #c39bd3; }
+.text-pastel-blue { color: #a2d5f2; }
+.text-pastel-green { color: #b2f7ef; }
+.text-pastel-red { color: #fa748e; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+
+  .modal-open {
+    overflow: hidden;
+  }
+}
+
+/* FlipHTML5-style perspective */
+.perspective-element {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+/* ===== FLIP ANIMATION ===== */
+/* FlipHTML5-style page turning animations */
+@keyframes pageFlipForward {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: -10px 0 15px rgba(0, 0, 0, 0.15);
+  }
+  75% {
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes pageFlipBackward {
+  0% {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.15);
+  }
+  75% {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* FlipHTML5 uses quick animations (500-600ms) */
+.animate-page-flip-forward {
+  animation: pageFlipForward 0.55s cubic-bezier(0.32, 0.09, 0.68, 0.94);
+}
+
+.animate-page-flip-backward {
+  animation: pageFlipBackward 0.55s cubic-bezier(0.32, 0.09, 0.68, 0.94);
+}
+
+/* FlipHTML5 uses backface-hidden for clean page turns */
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+/* FlipHTML5-style subtle page shadow */
+.page-shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease;
+}
+
+/* FlipHTML5 uses a very subtle gradient for page folds */
+.page-fold {
+  background: linear-gradient(to right,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(240, 240, 240, 0.9) 20%,
+    rgba(220, 220, 220, 0.9) 50%,
+    rgba(200, 200, 200, 1) 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* FlipHTML5-style page texture */
+.page-texture {
+  background-image:
+    linear-gradient(to right,
+      rgba(255, 255, 255, 0.03),
+      rgba(240, 240, 240, 0.03));
+  pointer-events: none;
+}
+
+/* Simple single page layout styles */
+.single-page-layout {
+  max-width: 450px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* FlipHTML5-style touch indicators */
+.swipe-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.swipe-indicator-left {
+  left: 15px;
+}
+
+.swipe-indicator-right {
+  right: 15px;
+}
+
+.swipe-active .swipe-indicator-left {
+  opacity: 0.6;
+}
+
+.swipe-active .swipe-indicator-right {
+  opacity: 0.6;
+}
+
+/* FlipHTML5 sound button with animation */
+@keyframes soundWave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.sound-active {
+  animation: soundWave 1.5s infinite;
+}
+
+/* FlipHTML5-style book binding */
+.book-binding {
+  background: linear-gradient(to right,
+    rgba(220, 220, 220, 1) 0%,
+    rgba(240, 240, 240, 1) 50%,
+    rgba(220, 220, 220, 1) 100%
+  );
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom color variables */
+:root {
+  --color-navy: #152a3a;
+  --color-navy-light: #1e3a4f;
+  --color-navy-dark: #0d1b25;
+  --color-blue-accent: #3b82f6;
+  --color-blue-accent-light: #60a5fa;
+}
+
+/* Apply navy colors to appropriate classes */
+.bg-navy {
+  background-color: var(--color-navy);
+}
+
+.bg-navy-light {
+  background-color: var(--color-navy-light);
+}
+
+.bg-navy-dark {
+  background-color: var(--color-navy-dark);
+}
+
+.text-navy {
+  color: var(--color-navy);
+}
+
+.bg-blue-accent {
+  background-color: var(--color-blue-accent);
+}
+
+.text-blue-accent {
+  color: var(--color-blue-accent);
+}
+
+.border-blue-accent {
+  border-color: var(--color-blue-accent);
+}
+
+.bg-blue-accent-light {
+  background-color: var(--color-blue-accent-light);
+}
+
+/* Story grid layout */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Dribbble card effect for story cards */
+.dribbble-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dribbble-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Storybook card effect for story cards */
+.storybook-card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 7px 32px 0 rgba(162,213,242,0.24), 0 1.5px 6px 0 rgba(195,155,211,0.13);
+  transition: transform 0.23s cubic-bezier(.35,1.21,.79,1.22), box-shadow 0.23s cubic-bezier(.35,1.21,.79,1.22);
+}
+.storybook-card:hover {
+  transform: translateY(-6px) scale(1.035) rotateZ(-0.5deg);
+  box-shadow: 0 18px 48px 0 rgba(251, 179, 193, 0.16), 0 7px 28px 0 rgba(162,213,242,0.29);
+}
+
+/* Aspect ratio utility classes */
+.aspect-4\/3 {
+  aspect-ratio: 4/3;
+}
+
+/* Animation for fade-in effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .bg-page {
+    background-color: #1a1a1a;
+  }
+  .dribbble-card {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ========================= */
+/* Storyland Reading UI CSS  */
+/* ========================= */
+
+/* Paper background for reading area */
+.bg-paper {
+  background: var(--creamy-white);
+  background-image: url('https://static.same-assets.com/paper-texture-light-op-6.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  opacity: 1;
+}
+
+/* Soft sky gradient for backgrounds */
+.bg-gradient-sky {
+  background: linear-gradient(120deg, var(--creamy-white) 60%, var(--sky-blue) 100%);
+}
+
+/* Reading box with paper texture and border */
+.reading-box {
+  background: var(--creamy-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10);
+  border: 4px solid var(--sky-blue);
+  background-image: url('https://static.same-assets.com/paper-texture-light-op-6.jpg');
+  background-size: 200% 200%;
+  background-blend-mode: lighten;
+  position: relative;
+}
+
+/* Bookmark icon in reading box */
+.bookmark-icon {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: var(--mint-green);
+  border-radius: 50%;
+  transition: background 0.2s;
+  z-index: 90;
+  border: 2.5px solid var(--sky-blue);
+}
+.bookmark-icon.active {
+  background: var(--sunshine-yellow);
+}
+
+/* Round navigation button for reading UI */
+.button-nav {
+  background: var(--pastel-peach);
+  border-radius: 50%;
+  border: none;
+  width: 54px;
+  height: 54px;
+  box-shadow: 0 6px 18px 0 rgba(255,193,133,0.10);
+  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .22s, transform .24s cubic-bezier(.5,2,.7,1.4);
+}
+.button-nav:hover:not(:disabled), .button-nav:focus-visible {
+  background: var(--sunshine-yellow);
+  transform: scale(1.1);
+}
+.button-nav:active {
+  background: var(--mint-green);
+}
+
+/* Highlight for reading selection */
+.reading-highlight {
+  background: var(--mint-green);
+  opacity: 0.33;
+  transition: background 0.19s;
+}
+
+/* Bubble note for reading tips or asides */
+.bubble-note {
+  font-family: var(--font-quicksand);
+  color: #444;
+  background: var(--mint-green);
+  border-radius: 10px 18px 18px 10px/50% 100% 100% 75%;
+  padding: 8px 18px;
+  font-style: italic;
+  font-size: 13.5px;
+}
+
+/* Reading title style */
+.reading-title {
+  font-family: var(--font-cubano);
+  font-size: 2.3rem;
+  color: #333;
+  text-shadow: 0 2px 12px #FFF8E7, 0 0 7px #ffd1ba90;
+  text-align: center;
+}
+
+/* Reading content style */
+.reading-content {
+  font-family: var(--font-mplus);
+  font-size: 19px;
+  color: #191b25;
+  line-height: 1.64;
+  padding: 0 32px 36px 32px;
+}
+
+/* Responsive adjustments for reading UI */
+@media (max-width: 900px) {
+  .reading-box {
+    border-width: 2.5px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .reading-content {
+    font-size: 18px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Doodle decorations for reading box corners */
+.bg-doodle-cloud {
+  position: absolute;
+  left: -36px;
+  top: -32px;
+  width: 76px; height: 44px;
+  z-index: 30 !important;
+  opacity: .9;
+  pointer-events: none;
+}
+.bg-doodle-star {
+  position: absolute;
+  right: -33px;
+  top: 17px;
+  width: 32px; height: 32px;
+  z-index: 29;
+  pointer-events: none;
+  opacity: .85;
+}
+.bg-doodle-leaf {
+  position: absolute;
+  right: -38px;
+  bottom: -22px;
+  width: 58px; height: 41px;
+  z-index: 28;
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* Mobile (max-width: 640px) improvements for reading UI */
+@media (max-width: 640px) {
+  .reading-box {
+    border-width: 2px;
+    border-radius: 11px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+    padding: 10px !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .reading-content {
+    font-size: 15px;
+    line-height: 1.44;
+    padding: 0 5px 18px 5px;
+  }
+  .reading-title {
+    font-size: 1.28rem;
+  }
+  .bubble-note {
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+  .bookmark-icon { right: 7px; top: 9px; width: 42px; height: 42px; }
+  .button-nav { width: 39px; height: 39px; font-size: 1.25rem; }
+  .bg-doodle-cloud { left: -16px; top: -13px; width: 36px; height: 21px; }
+  .bg-doodle-star { right: -9px; top: 9px; width: 20px; height: 20px; }
+  .bg-doodle-leaf { right: -17px; bottom: -9px; width: 24px; height: 21px; }
+}
